@@ -1,0 +1,12 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: $primery-text-color;
+    background-color: $primary-bg-color;
+
+    &.modal-open {
+        overflow: hidden;
+    }
+}

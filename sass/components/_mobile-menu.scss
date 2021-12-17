@@ -1,0 +1,145 @@
+.menu-container {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 40px;
+    overflow-y: scroll;
+    background-color: $primary-bg-color;
+
+    transform: translateX(100%);
+    transition: transform $duration-animation $cubic-bezier;
+}
+
+.menu-container.is-open {
+    transform: translateX(0);
+}
+
+.mobile-menu__list {
+    margin-bottom: auto;
+}
+
+.mobile-menu__item:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.mobile-menu__link {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: $title-text-color;
+
+    transition: color $duration-animation $cubic-bezier;
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+    
+}
+
+.mobile-menu__contact-list {
+    margin-bottom: 64px;
+}
+
+.mobile-menu__tel {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+
+    color: $accent-color;
+}
+
+.mobile-menu__contact-item:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.mobile-menu__email {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+
+    color: $primery-text-color;
+}
+
+.mobile-menu__social-list {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.mobile-menu__social-item:not(:last-child) {
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-menu__social-item:not(:first-child) {
+    padding-left: 10px;
+}
+
+.mobile-menu__social-link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    text-decoration: none;
+
+    letter-spacing: 0.02em;
+
+    color: $accent-color;
+}
+
+%button-menu {
+    padding: 0;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+
+.mobile-menu__button {
+    margin-left: auto;
+    @extend %button-menu;
+
+    transition: fill $duration-animation $cubic-bezier;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.mobile-menu__icon-menu {
+    transition: fill $duration-animation $cubic-bezier;
+
+    .mobile-menu__button:hover &,
+    .mobile-menu__button:focus & {
+        fill: $accent-color;
+    }
+}
+
+.mobile-menu__close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        @extend %button-menu;
+}
+
+.mobile-menu__icon-close {
+    transition: transform $duration-animation $cubic-bezier,
+    fill $duration-animation $cubic-bezier;
+
+    .mobile-menu__close-button:hover &,
+    .mobile-menu__close-button:focus & {
+        transform: rotate(90deg) scale(1.15);
+        fill: $accent-color;
+    }
+}
