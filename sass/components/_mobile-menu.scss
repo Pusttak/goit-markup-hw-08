@@ -1,13 +1,11 @@
-.menu-container {
+.mobile-menu {
     position: fixed;
-    flex-direction: column;
     top: 0;
     left: 0;
+    z-index: 999;
 
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    padding: 48px 40px;
+    width: 100%;
+    height: 100%;
     overflow-y: scroll;
     background-color: $primary-bg-color;
 
@@ -15,12 +13,24 @@
     transition: transform $duration-animation $cubic-bezier;
 }
 
-.menu-container.is-open {
+.mobile-menu.is-open {
     transform: translateX(0);
 }
 
+.container-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 480px;
+    height: 100%;
+    padding: 48px 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .mobile-menu__list {
-    margin-bottom: auto;
+    margin-bottom: 64px;
 }
 
 .mobile-menu__item:not(:last-child) {
@@ -45,6 +55,7 @@
 }
 
 .mobile-menu__contact-list {
+    margin-top: auto;
     margin-bottom: 64px;
 }
 
@@ -78,13 +89,22 @@
     flex-wrap: wrap;
 }
 
-.mobile-menu__social-item:not(:last-child) {
-    padding-right: 10px;
-    border-right: 1px solid rgba(33, 33, 33, 0.2);
+.mobile-menu__social-item {
+    display: inline-flex;
+    justify-content: center;
 }
 
-.mobile-menu__social-item:not(:first-child) {
-    padding-left: 10px;
+.mobile-menu__social-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.mobile-menu__social-item:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    margin-left: 10px;
+    background-color: rgba(33, 33, 33, 0.2);
 }
 
 .mobile-menu__social-link {
@@ -127,10 +147,10 @@
 }
 
 .mobile-menu__close-button {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        @extend %button-menu;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    @extend %button-menu;
 }
 
 .mobile-menu__icon-close {
