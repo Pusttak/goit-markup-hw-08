@@ -51,7 +51,10 @@
     &:focus {
         color: $accent-color;
     }
-    
+
+    &--current {
+        color: $accent-color;
+    }
 }
 
 .mobile-menu__contact-list {
@@ -61,12 +64,16 @@
 
 .mobile-menu__tel {
     font-weight: 500;
-    font-size: 34px;
+    font-size: 8vw;
     line-height: 1.18;
     letter-spacing: 0.02em;
     text-decoration: none;
 
     color: $accent-color;
+
+    @media screen and (min-width: 480px) {
+        font-size: 34px;
+    }
 }
 
 .mobile-menu__contact-item:not(:last-child) {
@@ -154,8 +161,7 @@
 }
 
 .mobile-menu__icon-close {
-    transition: transform $duration-animation $cubic-bezier,
-    fill $duration-animation $cubic-bezier;
+    transition: transform $duration-animation $cubic-bezier, fill $duration-animation $cubic-bezier;
 
     .mobile-menu__close-button:hover &,
     .mobile-menu__close-button:focus & {

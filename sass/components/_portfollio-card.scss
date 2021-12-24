@@ -1,81 +1,91 @@
 .portfolio-card {
-    text-decoration: none;
-    transition: box-shadow $duration-animation $cubic-bezier;
+  text-decoration: none;
+  transition: box-shadow $duration-animation $cubic-bezier;
 
-    &:hover,
-    &:focus {
-        box-shadow:
-        1px 4px 6px 0px rgba(0, 0, 0, .16),
-        0px 4px 4px 0px rgba(0, 0, 0, .06),
-        0px 1px 1px 0px rgba(0, 0, 0, .12);
-    }
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+  }
 
-    @media screen and (min-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }
 
 .portfolio-card__photo-wrap {
-    position: relative;
+  position: relative;
 
-    overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .portfolio-card__overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateY(101%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(101%);
 
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    padding: 63px 24px;
-    background-color: rgba(33, 150, 243, 0.9);
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 77px;
+  padding-bottom: 77px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(33, 150, 243, 0.9);
 
-    transition: transform $duration-animation $cubic-bezier;
+  transition: transform $duration-animation $cubic-bezier;
 
-    .portfolio-card:hover &,
-    .portfolio-card:focus & {
-        transform: translateY(0);
-    }
+  .portfolio-card:hover &,
+  .portfolio-card:focus & {
+    transform: translateY(0);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 49px;
+    padding-bottom: 49px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 63px;
+    padding-bottom: 63px;
+  }
 }
 
 .portfolio-card__text-overlay {
-    font-size: 18px;
-    line-height: 1.56;
-
-    color: $primary-bg-color;
+  font-size: 18px;
+  line-height: 1.56;
+  color: $primary-bg-color;
 }
 
 .portfolio-card__text-wrap {
-    $borderColor: #EEEEEE;  
-    padding: 20px 24px;
-    border-right: 1px solid $borderColor;
-    border-bottom: 1px solid $borderColor;
-    border-left: 1px solid $borderColor;
+  $borderColor: #eeeeee;
+  padding: 20px 24px;
+  border-right: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
 
-    @media screen and (min-width: 768px) {
-        flex-grow: 1;;
-    }
+  @media screen and (min-width: 768px) {
+    flex-grow: 1;
+  }
 }
 
 .portfolio-card__subtitle {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 
-    color: $title-text-color;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
+  color: $title-text-color;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
 }
 
 .portfolio-card__text {
-    color: $primery-text-color;
-    font-size: 16px;
-    line-height: 1.88;
+  color: $primery-text-color;
+  font-size: 16px;
+  line-height: 1.88;
 }

@@ -30,7 +30,7 @@
     border-radius: 4px;
 
     transition: color $duration-animation $cubic-bezier,
-    border-color $duration-animation $cubic-bezier;
+        border-color $duration-animation $cubic-bezier;
 
     &:hover,
     &:focus {

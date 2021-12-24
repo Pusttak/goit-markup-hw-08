@@ -14,21 +14,27 @@
 .site-contact__link {
     display: flex;
     align-items: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
 
     color: $primery-text-color;
     font-weight: 500;
-    font-size: 12xp;
+    font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.02em;
     text-decoration: none;
     transition: color $duration-animation $cubic-bezier;
 
+    &--mail {
+        padding-top: 20px;
+    }
+
+    &--tel {
+        padding-bottom: 20px;
+    }
+
     @media screen and (min-width: 1200px) {
         padding-top: 32px;
         padding-bottom: 32px;
-        font-size: 14xp;
+        font-size: 14px;
         line-height: 1.14;
     }
 
@@ -39,10 +45,13 @@
 }
 
 .site-contact__item:not(:last-child) {
+    @media screen and (max-width: 1199px) {
+        margin-bottom: 10px;
+    }
+
     @media screen and (min-width: 1200px) {
         margin-right: 50px;
     }
-
 }
 
 .site-contact__icon {
@@ -58,10 +67,3 @@
         fill: currentColor;
     }
 }
-
-
-
-
-
-
-
